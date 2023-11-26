@@ -13,14 +13,14 @@ var target = prompt("Enter the target: ");
 var nums = numbers.split(",");
 
 function twoSum(nums, target) {
-  const numMap = {};
+  const numMap = new Map();
 
   for (let i = 0; i < nums.length; i++) {
     const complement = target - nums[i];
-    if (complement in numMap) {
-      return [numMap[complement], i];
+    if (numMap.has(complement)) {
+      return [numMap.get(complement), i];
     }
-    numMap[nums[i]] = i;
+    numMap.set(+nums[i], i);
   }
   return null;
 }

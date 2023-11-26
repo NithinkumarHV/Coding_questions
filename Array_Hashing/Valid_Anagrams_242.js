@@ -28,8 +28,8 @@ function isAnagram(s, t) {
   const tMap = new Map();
 
   for (let i = 0; i < s.length; i++) {
-    sMap.get(s[i]) ? sMap.set(s[i], sMap.get(s[i]) + 1) : sMap.set(s[i], 0);
-    tMap.get(t[i]) ? tMap.set(t[i], tMap.get(t[i]) + 1) : tMap.set(t[i], 0);
+    sMap.set(s[i], (sMap.get(s[i]) || 0) + 1);
+    tMap.set(t[i], (tMap.get(t[i]) || 0) + 1);
   }
 
   for (let [key, value] of sMap) {
