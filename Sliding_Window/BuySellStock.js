@@ -10,11 +10,11 @@ var maxProfit = function (prices) {
   // While right less than length of the array
   while (right < prices.length) {
     // if prices[right] <= prices[left] => there can be no profit
-    const canSlide = prices[right] <= prices[left];
-    if (canSlide) left = right;
+    if (prices[right] <= prices[left]) left = right;
 
     // compute profit
     const profit = prices[right] - prices[left];
+    console.log(profit);
 
     // compute maxProfit
     max = Math.max(max, profit);
