@@ -14,10 +14,6 @@
     Input: nums = [1,1,1,3,3,4,3,2,4,2]
     Output: true
 */
-let prompt = require("prompt-sync")();
-
-let numbers = prompt("Enter the array numbers in comma separated format: ");
-let nums = numbers.split(",");
 
 function containsDuplicate(nums) {
   let set = new Set();
@@ -31,4 +27,4 @@ function containsDuplicate(nums) {
   return false;
 }
 
-console.log("Answer is\n", containsDuplicate(nums));
+console.log("Answer is\n", containsDuplicate([1, 2, 3, 1]));

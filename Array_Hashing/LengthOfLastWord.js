@@ -21,16 +21,18 @@
 function LengthOfLastWord(str) {
   let i = str.length - 1;
   let length = 0;
+  let lastWord = "";
 
   while (str[i] === " ") {
     i--;
   }
 
   while (i >= 0 && str[i] !== " ") {
+    lastWord += str[i];
     i--;
     length++;
   }
-  return length;
+  return { length, lastWord: lastWord.split("").reverse().join("") };
 }
 
 console.log(LengthOfLastWord("   Hello      world  "));
