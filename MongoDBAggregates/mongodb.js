@@ -64,7 +64,7 @@ db.users.aggregate([
 [
   {
     $group: {
-      _id: "$favouriteFruit",
+      _id: "$favoriteFruit",
       count: {
         $sum: 1, // add count one to the sum
       },

@@ -21,6 +21,19 @@
   Input: nums = [1,2,3,1,2,3], k = 2
   Output: false
 
+  ALGORITHM:
+
+  1. set left = 0, right = 0
+  2. create a hasmap called map
+  3. while(right less than nums length)
+      1. if map has element at nums[right] - return true
+      2. else add that element(nums[right]) to map
+      3. increment right;
+
+      Now, below code make sure that the window length <= k
+      4. if right - left > k - then delete element at nums[left] from map
+      5. increment left;
+  4. End of while and return false
 
  */
 var containsNearbyDuplicate = function (nums, k) {

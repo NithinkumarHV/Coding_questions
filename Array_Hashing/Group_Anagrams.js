@@ -13,6 +13,7 @@ const getHash = (word) => {
     const charCode = char.charCodeAt(0) - "a".charCodeAt(0);
     frequency[charCode]++;
   }
+  console.log(frequency);
   return frequency.toString();
 };
 

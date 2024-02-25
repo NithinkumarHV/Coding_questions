@@ -25,12 +25,24 @@
   Output: 3
   Explanation: The answer is "wke", with the length of 3.
   Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+
+  ALGORITHM:
+
+  1. set left=0,max=0, create a new Set()
+  2. iterate through the string, variable is right
+      if(set has s[right]) - remove s[left] and increment left
+      else
+        add s[right] to set
+        compute max = max(max, set.size)
+  3. return max
+
  */
 
 function lengthOfLongestSubstring(s) {
   const set = new Set();
   let l = 0;
   let max = 0;
+  let longestSubstring = [];
 
   for (let r = 0; r < s.length; r++) {
     // while set has s[r], delete s[l] and do l++

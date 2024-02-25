@@ -30,6 +30,17 @@
     Input: nums = [3,9,6], k = 2
     Output: 1
 
+    ALGORITHM:
+
+    1. sort the nums array from lowest to highest
+    2. set left=0, curSum=0, maxLength = 0
+    3. Iterate through nums, using for loop and right as variable
+        1. compute curLength = right - left + 1
+        2. compute curSum = curSum + nums[right]
+        3. if(nums[right] * curLength <= curSum + k)
+            if true - set maxLength = curLength
+            else - subtract nums[left] from curSum and increment left;
+    4. End For loop and return maxLength
  */
 
 var maxFrequency = function (nums, k) {
