@@ -31,6 +31,7 @@ function plusOne(nums) {
     if (carry === 0) break;
   }
   if (carry > 0) {
+    // The unshift() method adds new elements to the beginning of an array.
     nums.unshift(carry);
   }
   return nums;
