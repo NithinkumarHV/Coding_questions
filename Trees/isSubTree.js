@@ -1,16 +1,16 @@
-function isSubtree(s, t) {
-  if (!t) {
+function isSubtree(root, subRoot) {
+  if (!subRoot) {
     return true;
   }
-  if (!s) {
+  if (!root) {
     return false;
   }
 
-  if (sameTree(s, t)) {
+  if (sameTree(root, subRoot)) {
     return true;
   }
 
-  return isSubtree(s.left, t) || isSubtree(s.right, t);
+  return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
 }
 
 function sameTree(s, t) {
